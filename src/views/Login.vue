@@ -46,10 +46,10 @@ export default {
             await axiosClient.post('users/login', body)
 
                 .then((res) => {
-                    e
+                    
                     this.$router.replace("/");
                     localStorage.setItem("token", res.data.token)
-                    location.reload()
+                    // location.reload()
                     sweetalert({
                         text: "User Logged In Successfully!",
                         icon: "success"

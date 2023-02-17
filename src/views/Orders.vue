@@ -54,7 +54,7 @@ export default {
         this.token = localStorage.getItem("token");
         if (this.token) {
             this.fetchOrders();
-        }
+        } 
 
     }
 }

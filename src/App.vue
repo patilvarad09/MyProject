@@ -31,6 +31,7 @@ export default {
     return {
       token: null
     }
+  
   },
   mounted() {
     this.token = localStorage.getItem("token")
