@@ -28,7 +28,7 @@
 </template>
 <script>
 import axiosClient from '../axiosClient';
-
+import swal from 'sweetalert';
 export default {
     data() {
         return {
@@ -54,7 +54,13 @@ export default {
         this.token = localStorage.getItem("token");
         if (this.token) {
             this.fetchOrders();
-        } 
+        } else {
+            swal({
+                        text: "Please Login! U are not logged In.",
+                        icon: "error"
+                    });
+                    this.$router.replace("/signup");
+        }
 
     }
 }

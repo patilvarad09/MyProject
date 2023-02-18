@@ -45,12 +45,21 @@ export default {
                 icon: "success"
             });
             this.$router.replace("/");
-            location.reload()
+           
         }
     },
     mounted() {
         this.token = localStorage.getItem("token");
-        this.fetchProfile();
+        
+        if (this.token) {
+            this.fetchProfile();
+        } else {
+            swal({
+                        text: "Please Login! U are not logged In.",
+                        icon: "error"
+                    });
+                    this.$router.replace("/signup");
+        }
     }
 }
 </script>
